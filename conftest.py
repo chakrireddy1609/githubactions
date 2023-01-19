@@ -10,7 +10,7 @@ from webdriver_manager.core.utils import ChromeType
 def setup(request):
     service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
     chrome_options = Options()
-    options = ["--ignore-certificate-errors"]
+    options = ["headless","--ignore-certificate-errors"]
     for option in options:
         chrome_options.add_argument(option)
     request.cls.driver = webdriver.Chrome(service=service, options=chrome_options)
