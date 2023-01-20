@@ -7,6 +7,9 @@ jobs:
     steps:
       - name: Check out this repo
         uses: actions/checkout@v2
+     # Docker-Compose setup
+      - name: Setup docker compose
+        run: docker-compose up -d 
      #Setup Python
       - name: Set up Python
         uses: actions/setup-python@v2
